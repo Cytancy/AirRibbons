@@ -1,0 +1,623 @@
+@import 'compass/css3';
+@import "compass/css3/user-interface";
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(http://fonts.googleapis.com/css?family=Cinzel:400,700);
+@import url(http://fonts.googleapis.com/css?family=Muli:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+
+.aeto-chevron {
+	position: absolute;
+	text-align: center;
+	height: 10px;
+	width: 10px;
+
+	.component-container {
+		.component {
+			background: inherit;
+		}
+	}
+
+	&.vertical {
+		.component {
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 5 0%;
+		}
+
+		.component:nth-child(1) {
+			@include transform(skew(0deg, 6deg));
+
+			left: 0;
+		}
+
+		.component:nth-child(2) {
+			@include transform(skew(0deg, -6deg));
+			
+			right: 0;
+		}
+	}
+
+	&.horizontal {
+		.component {
+			width: 100%;
+			height: 50%;
+			position: absolute;
+			left: 0;
+		}
+
+		.component:nth-child(1) {
+			@include transform(skew(6deg, 0deg));
+
+			top: 0;
+		}
+
+		.component:nth-child(2) {
+			@include transform(skew(-6deg, 0deg));
+			
+			bottom: 0;
+		}
+	}
+}
+
+body {
+	background-color: #000;
+	margin: 0px;
+	text-align: center;
+	overflow: hidden;
+
+	.demo-page {
+		$margins: 100px;
+
+		@include box-shadow(0 0 5px 5px rgba(0, 0, 0, .2));
+		@include transition-duration(.35s);
+		@include transition-property(all);
+		@include transition-timing-function(ease-in-out);
+
+		opacity: .9;
+		position: absolute;
+		height: calc(100% - #{$margins});
+		width: calc(100% - #{$margins});
+		top: #{$margins / 2};
+		left: #{$margins / 2};
+		z-index: 110;
+
+		.page-bg {
+			background: #FFF;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.close-button {
+			@include transition-duration(.45s);
+			@include transition-property(transform, opacity);
+			@include transition-timing-function(ease-in-out);
+
+			background-image: url(../images/close-x.png);
+			background-position: center center;
+			background-size: 100% auto;
+			cursor: pointer;
+			height: 40px;
+			position: absolute;
+			right: 6px;
+			top: 6px;
+			width: 40px;
+			z-index: 200;
+			opacity: .12;
+
+			&.hovered {
+				@include transform(rotate(360deg));
+
+				opacity: .25;
+			}
+		}
+
+		.title {
+			@include animation(title-animation 1s ease-in-out 0s);
+			@include transition-duration(.35s);
+			@include transition-property(transform, opacity);
+			@include transition-timing-function(ease-in-out);
+
+			color: #474747;
+			left: 0;
+			margin: 0 auto;
+			position: absolute;
+			right: 0;
+			top: 56px;
+			z-index: 1;
+            font-family: 'Josefin Sans', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Muli', sans-serif;
+            font-family: 'Raleway', sans-serif;
+            font-size: 48px;
+		}
+
+		.content {
+			$topMargin: 146px;
+			$bottomMargin: 62px;
+
+			@include transition-duration(.45s);
+			@include transition-property(transform, opacity);
+			@include transition-timing-function(ease-in-out);
+
+			text-align: left;
+			position: absolute;
+			top: $topMargin;
+			width: calc(100% - 160px);
+			max-width: 860px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			height: calc(100% - #{$topMargin + $bottomMargin});
+			overflow: auto;
+			z-index: 1;
+			padding: 0 20px;
+
+			.header, .text-content, .code-block {
+				width: 100%;
+				display: inline-block;
+				position: relative;
+			}
+
+			.header {
+				font-size: 28px;
+            	font-family: 'Raleway', sans-serif;
+				color: #474747;
+				margin: 10px 0;
+
+				&:not(:first-child) {
+				    margin-top: 32px;
+				}
+			}
+
+			.text-content {
+				font-family: Helvetica, sans-serif;
+
+				ul {
+					margin: 10px 0;
+				}
+			}
+
+			.code-block {
+				$blockMargin: 10px;
+
+				@include border-radius(6px);
+				@include box-shadow(inset 0 0 3px 3px rgba(0, 0, 0, .15));
+
+				background: rgba(0, 0, 0, 0.85);
+				color: #FFF;
+				font-family: Consolas, monospace;
+				margin: 26px #{$blockMargin};
+				padding: 20px;
+				width: calc(100% - #{$blockMargin * 2});
+			}
+		}
+
+		&.hovered {
+			opacity: .7;
+
+			.title {
+				@include transform(scale(1.1));
+
+				opacity: .8;
+			}
+
+			.content {
+				@include transform(scale(.9));
+
+				opacity: .8;
+			}
+		}
+
+		&.exit {
+			opacity: 0;
+
+			.title {
+				@include transform(scale(1.1) translatex(-200px));
+
+				opacity: 0;
+			}
+
+			.content {
+				@include transform(scale(.9) translatex(200px));
+
+				opacity: 0;
+			}
+		}
+	}
+
+	.demo-bg {
+		@include transition-duration(.35s);
+		@include transition-property(opacity);
+		@include transition-timing-function(ease-in-out);
+
+		background-position: center center;
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+
+		&.elemental {
+			background-image: url(../images/bg-1.jpg);
+		}
+
+		&.hurricane {
+			background-image: url(../images/bg-2.jpg);
+		}
+
+		&.barrage {
+			background-image: url(../images/bg-3.jpg);
+		}
+
+		&.stream {
+			background-image: url(../images/bg-4.jpg);
+		}
+
+		&.spear {
+			background-image: url(../images/bg-5.jpg);
+		}
+
+		&.sentinel {
+			background-image: url(../images/bg-6.png);
+		}
+	}
+
+	.intro-screen {
+		@include transition-duration(.35s);
+		@include transition-property(opacity);
+		@include transition-timing-function(ease-in-out);
+
+		background-image: url(../images/intro-bg.jpg);
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 100;
+
+		.circle-outline {
+			@include border-radius(50%);
+			@include box-shadow(0 0 0 25px #FFF);
+			@include transition-duration(.35s);
+			@include transition-property(opacity, transform, box-shadow);
+			@include transition-timing-function(ease-in-out);
+
+			bottom: 0;
+			height: 400px;
+			left: 0;
+			margin: auto;
+			opacity: .65;
+			cursor: pointer;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 400px;
+			z-index: 20;
+		}
+
+		.intro-arrow {
+			@include transform(translatey(30px));
+			@include transition-property(opacity, transform);
+			@include transition-timing-function(ease-in-out);
+			@include transition-duration(.35s);
+
+			width: 200px;
+			height: 400px;
+			background-image: url(../images/intro-arrow.png);
+			background-position: center center;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+			opacity: .65;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+
+		.intro-name {
+			@include transform(translatey(250px));
+			@include transition-property(transform);
+			@include transition-timing-function(ease-in-out);
+			@include transition-duration(.35s);
+
+			font-family: 'Josefin Sans', sans-serif;
+			font-size: 36px;
+			color: #FFF;
+			font-weight: bold;
+			position: absolute;
+			right: 0;
+			top: 0;
+			margin: auto;
+			left: 0;
+			bottom: 0;
+			height: 0;
+			opacity: .85;
+		}
+
+		&.hovered {
+			.circle-outline {
+				@include transform(scale(.85));
+				@include box-shadow(0 0 0 20px #FFF);
+
+				opacity: .9;
+			}
+
+			.intro-arrow {
+				@include transform(translatey(-50px));
+
+				opacity: .85;
+			}
+
+			.intro-name {
+				@include transform(translatey(194px));
+			}
+		}
+
+		&.exited {
+			opacity: 0;
+			pointer-events: none;
+
+			.intro-arrow {
+				@include transform(translatey(calc(-100% - 400px)));
+
+				opacity: .85;
+			}
+
+			.circle-outline {
+				@include transform(scale(5.5));
+
+				opacity: .9;
+			}
+		}
+	}
+
+	.canvas-container {
+		@include transition-duration(.35s);
+		@include transition-property(opacity, transform);
+		@include transition-timing-function(ease-in-out);
+	}
+
+	.slider-container {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto 0;
+		bottom: 80px;
+		z-index: 10;
+
+		.yui3-slider-thumb {
+			outline:0 !important;
+			cursor: pointer;
+			img {
+			top: 0 !important;
+			}
+		}
+	}
+
+	.speed-rate-container {
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto 0;
+		bottom: 120px;
+		pointer-events: none;
+
+		.speed-title-text {
+			color: #FFF;
+			display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+			font-size: 18px;
+			margin-right: 4px;
+		}
+
+		.speed-text {
+			color: #FFF;
+			display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+
+			.value {
+				font-size: 32px;
+
+				display: inline-block;
+			}
+
+			span {
+				font-size: 26px;
+
+			}
+		}
+	}
+
+	.control-chevron-container {
+		@include transition-duration(.35s);
+		@include transition-property(opacity);
+		@include transition-timing-function(ease-in-out);
+
+		bottom: 60px;
+		height: 70px;
+		left: 0;
+		margin: auto;
+		opacity: .3;
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+		width: 80px;
+		z-index: 20;
+
+		&.left {
+			left: -450px;
+		}
+
+		&.right {
+			right: -450px;
+		}
+
+		.aeto-chevron {
+			$tilt: 55deg;
+
+			@include transition-duration(.35s);
+			@include transition-property(transform, opacity);
+			@include transition-timing-function(ease-in-out);
+
+			height: 70px;
+			width: 35px;
+			z-index: 2;
+			position: absolute;
+
+			.component-container {
+				background: #FFF;
+			}
+
+			.component {
+				@include transition-duration(.35s);
+				@include transition-property(transform);
+				@include transition-timing-function(ease-in-out);
+			}
+
+			&.left {
+				left: 20px;
+
+				.component:nth-child(1) {@include transform(skew(#{-$tilt}, 0deg));}
+				.component:nth-child(2) {@include transform(skew($tilt, 0deg));}
+			}
+
+			&.right {
+				right: 20px;
+
+				.component:nth-child(1) {@include transform(skew($tilt, 0deg));}
+				.component:nth-child(2) {@include transform(skew(#{-$tilt}, 0deg));}
+			}
+		}
+
+		&.hovered {
+			opacity: .5;
+
+			.aeto-chevron {
+				$tilt: 65deg;
+
+				&.left {
+					.component:nth-child(1) {@include transform(skew(#{-$tilt}, 0deg));}
+					.component:nth-child(2) {@include transform(skew($tilt, 0deg));}
+				}
+
+				&.right {
+					.component:nth-child(1) {@include transform(skew($tilt, 0deg));}
+					.component:nth-child(2) {@include transform(skew(#{-$tilt}, 0deg));}
+				}
+			}
+		}
+	}
+
+	.refresh-button {
+		@include transition-duration(.35s);
+		@include transition-property(opacity, transform);
+		@include transition-timing-function(ease-in-out);
+
+		background-image: url(../images/refreshIcon.png);
+		background-size: contain;
+		cursor: pointer;
+		height: 60px;
+		opacity: .75;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		width: 60px;
+		z-index: 20;
+
+		&:hover {
+			@include transform(scale(1.1) rotate(360deg));
+
+			opacity: 1;
+		}
+	}
+
+	.quantity-form-label {
+		@include transition-duration(.35s);
+		@include transition-property(opacity);
+		@include transition-timing-function(ease-in-out);
+
+		color: #FFF;
+        font-family: 'Montserrat', sans-serif;
+		font-size: 18px;
+		line-height: 16px;
+		left: 20px;
+		pointer-events: none;
+		position: absolute;
+		top: 20px;
+		z-index: 30;
+	}
+
+	.quantity-form {
+		@include transition-duration(.35s);
+		@include transition-property(opacity, width);
+		@include transition-timing-function(ease-in-out);
+
+		height: 32px;
+		border: none;
+		left: 20px;
+		opacity: .4;
+		outline: none;
+		position: absolute;
+		top: 42px;
+		z-index: 30;
+        font-family: 'Montserrat', sans-serif;
+		font-size: 18px;
+		padding: 0 6px;
+		width: 96px;
+
+		&:focus {
+			opacity: .8;
+			outline: none;
+			width: 160px;
+		}
+	}
+
+	.loop-label {
+		@include transition-duration(.35s);
+		@include transition-property(opacity);
+		@include transition-timing-function(ease-in-out);
+
+		position: absolute;
+		color: #FFF;
+		right: 20px;
+		bottom: 20px;
+        font-family: 'Montserrat', sans-serif;
+		font-size: 14px;
+		opacity: .5;
+	}
+
+	.demo-title {
+		@include transition-duration(.35s);
+		@include transition-property(opacity);
+		@include transition-timing-function(ease-in-out);
+
+		color: #FFF;
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 60px;
+		font-weight: bold;
+		left: 0;
+		margin: 0 auto;
+		position: absolute;
+		right: 0;
+		top: 22px;
+	  	line-height: 60px;
+	  	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.25), 0px 0px 6px rgba(0, 0, 0, 0.25);
+	  	opacity: 0;
+	}
+}
+
+@include keyframes(title-animation) {
+    0% {
+    	@include transform(scale(1.1));
+
+    	opacity: 0;
+    }
+}

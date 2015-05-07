@@ -1,0 +1,851 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(http://fonts.googleapis.com/css?family=Cinzel:400,700);
+@import url(http://fonts.googleapis.com/css?family=Muli:400,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+/* line 12, ../compass/sass/main.scss */
+.aeto-chevron {
+  position: absolute;
+  text-align: center;
+  height: 10px;
+  width: 10px;
+}
+/* line 19, ../compass/sass/main.scss */
+.aeto-chevron .component-container .component {
+  background: inherit;
+}
+/* line 25, ../compass/sass/main.scss */
+.aeto-chevron.vertical .component {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 5 0%;
+}
+/* line 32, ../compass/sass/main.scss */
+.aeto-chevron.vertical .component:nth-child(1) {
+  -moz-transform: skew(0deg, 6deg);
+  -ms-transform: skew(0deg, 6deg);
+  -webkit-transform: skew(0deg, 6deg);
+  transform: skew(0deg, 6deg);
+  left: 0;
+}
+/* line 38, ../compass/sass/main.scss */
+.aeto-chevron.vertical .component:nth-child(2) {
+  -moz-transform: skew(0deg, -6deg);
+  -ms-transform: skew(0deg, -6deg);
+  -webkit-transform: skew(0deg, -6deg);
+  transform: skew(0deg, -6deg);
+  right: 0;
+}
+/* line 46, ../compass/sass/main.scss */
+.aeto-chevron.horizontal .component {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+}
+/* line 53, ../compass/sass/main.scss */
+.aeto-chevron.horizontal .component:nth-child(1) {
+  -moz-transform: skew(6deg, 0deg);
+  -ms-transform: skew(6deg, 0deg);
+  -webkit-transform: skew(6deg, 0deg);
+  transform: skew(6deg, 0deg);
+  top: 0;
+}
+/* line 59, ../compass/sass/main.scss */
+.aeto-chevron.horizontal .component:nth-child(2) {
+  -moz-transform: skew(-6deg, 0deg);
+  -ms-transform: skew(-6deg, 0deg);
+  -webkit-transform: skew(-6deg, 0deg);
+  transform: skew(-6deg, 0deg);
+  bottom: 0;
+}
+
+/* line 67, ../compass/sass/main.scss */
+body {
+  background-color: #000;
+  margin: 0px;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 73, ../compass/sass/main.scss */
+body .demo-page {
+  -moz-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  opacity: .9;
+  position: absolute;
+  height: calc(100% - 100px);
+  width: calc(100% - 100px);
+  top: 50px;
+  left: 50px;
+  z-index: 110;
+}
+/* line 89, ../compass/sass/main.scss */
+body .demo-page .page-bg {
+  background: #FFF;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 98, ../compass/sass/main.scss */
+body .demo-page .close-button {
+  -moz-transition-duration: 0.45s;
+  -o-transition-duration: 0.45s;
+  -webkit-transition-duration: 0.45s;
+  transition-duration: 0.45s;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-image: url(../images/close-x.png);
+  background-position: center center;
+  background-size: 100% auto;
+  cursor: pointer;
+  height: 40px;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 40px;
+  z-index: 200;
+  opacity: .12;
+}
+/* line 115, ../compass/sass/main.scss */
+body .demo-page .close-button.hovered {
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  opacity: .25;
+}
+/* line 122, ../compass/sass/main.scss */
+body .demo-page .title {
+  -moz-animation: title-animation 1s ease-in-out 0s;
+  -webkit-animation: title-animation 1s ease-in-out 0s;
+  animation: title-animation 1s ease-in-out 0s;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  color: #474747;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 56px;
+  z-index: 1;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Muli', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-size: 48px;
+}
+/* line 142, ../compass/sass/main.scss */
+body .demo-page .content {
+  -moz-transition-duration: 0.45s;
+  -o-transition-duration: 0.45s;
+  -webkit-transition-duration: 0.45s;
+  transition-duration: 0.45s;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  text-align: left;
+  position: absolute;
+  top: 146px;
+  width: calc(100% - 160px);
+  max-width: 860px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: calc(100% - 208px);
+  overflow: auto;
+  z-index: 1;
+  padding: 0 20px;
+}
+/* line 163, ../compass/sass/main.scss */
+body .demo-page .content .header, body .demo-page .content .text-content, body .demo-page .content .code-block {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+}
+/* line 169, ../compass/sass/main.scss */
+body .demo-page .content .header {
+  font-size: 28px;
+  font-family: 'Raleway', sans-serif;
+  color: #474747;
+  margin: 10px 0;
+}
+/* line 175, ../compass/sass/main.scss */
+body .demo-page .content .header:not(:first-child) {
+  margin-top: 32px;
+}
+/* line 180, ../compass/sass/main.scss */
+body .demo-page .content .text-content {
+  font-family: Helvetica, sans-serif;
+}
+/* line 183, ../compass/sass/main.scss */
+body .demo-page .content .text-content ul {
+  margin: 10px 0;
+}
+/* line 188, ../compass/sass/main.scss */
+body .demo-page .content .code-block {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -moz-box-shadow: inset 0 0 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: inset 0 0 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 0 3px 3px rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.85);
+  color: #FFF;
+  font-family: Consolas, monospace;
+  margin: 26px 10px;
+  padding: 20px;
+  width: calc(100% - 20px);
+}
+/* line 203, ../compass/sass/main.scss */
+body .demo-page.hovered {
+  opacity: .7;
+}
+/* line 206, ../compass/sass/main.scss */
+body .demo-page.hovered .title {
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  opacity: .8;
+}
+/* line 212, ../compass/sass/main.scss */
+body .demo-page.hovered .content {
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  opacity: .8;
+}
+/* line 219, ../compass/sass/main.scss */
+body .demo-page.exit {
+  opacity: 0;
+}
+/* line 222, ../compass/sass/main.scss */
+body .demo-page.exit .title {
+  -moz-transform: scale(1.1) translatex(-200px);
+  -ms-transform: scale(1.1) translatex(-200px);
+  -webkit-transform: scale(1.1) translatex(-200px);
+  transform: scale(1.1) translatex(-200px);
+  opacity: 0;
+}
+/* line 228, ../compass/sass/main.scss */
+body .demo-page.exit .content {
+  -moz-transform: scale(0.9) translatex(200px);
+  -ms-transform: scale(0.9) translatex(200px);
+  -webkit-transform: scale(0.9) translatex(200px);
+  transform: scale(0.9) translatex(200px);
+  opacity: 0;
+}
+/* line 236, ../compass/sass/main.scss */
+body .demo-bg {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-position: center center;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+/* line 250, ../compass/sass/main.scss */
+body .demo-bg.elemental {
+  background-image: url(../images/bg-1.jpg);
+}
+/* line 254, ../compass/sass/main.scss */
+body .demo-bg.hurricane {
+  background-image: url(../images/bg-2.jpg);
+}
+/* line 258, ../compass/sass/main.scss */
+body .demo-bg.barrage {
+  background-image: url(../images/bg-3.jpg);
+}
+/* line 262, ../compass/sass/main.scss */
+body .demo-bg.stream {
+  background-image: url(../images/bg-4.jpg);
+}
+/* line 266, ../compass/sass/main.scss */
+body .demo-bg.spear {
+  background-image: url(../images/bg-5.jpg);
+}
+/* line 270, ../compass/sass/main.scss */
+body .demo-bg.sentinel {
+  background-image: url(../images/bg-6.png);
+}
+/* line 275, ../compass/sass/main.scss */
+body .intro-screen {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-image: url(../images/intro-bg.jpg);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+}
+/* line 286, ../compass/sass/main.scss */
+body .intro-screen .circle-outline {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 0 0 0 25px #FFF;
+  -webkit-box-shadow: 0 0 0 25px #FFF;
+  box-shadow: 0 0 0 25px #FFF;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity, -moz-transform, box-shadow;
+  -o-transition-property: opacity, -o-transform, box-shadow;
+  -webkit-transition-property: opacity, -webkit-transform, box-shadow;
+  transition-property: opacity, transform, box-shadow;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  bottom: 0;
+  height: 400px;
+  left: 0;
+  margin: auto;
+  opacity: .65;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 400px;
+  z-index: 20;
+}
+/* line 306, ../compass/sass/main.scss */
+body .intro-screen .intro-arrow {
+  -moz-transform: translatey(30px);
+  -ms-transform: translatey(30px);
+  -webkit-transform: translatey(30px);
+  transform: translatey(30px);
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  width: 200px;
+  height: 400px;
+  background-image: url(../images/intro-arrow.png);
+  background-position: center center;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  opacity: .65;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 325, ../compass/sass/main.scss */
+body .intro-screen .intro-name {
+  -moz-transform: translatey(250px);
+  -ms-transform: translatey(250px);
+  -webkit-transform: translatey(250px);
+  transform: translatey(250px);
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 36px;
+  color: #FFF;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: auto;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  opacity: .85;
+}
+/* line 346, ../compass/sass/main.scss */
+body .intro-screen.hovered .circle-outline {
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  -webkit-transform: scale(0.85);
+  transform: scale(0.85);
+  -moz-box-shadow: 0 0 0 20px #FFF;
+  -webkit-box-shadow: 0 0 0 20px #FFF;
+  box-shadow: 0 0 0 20px #FFF;
+  opacity: .9;
+}
+/* line 353, ../compass/sass/main.scss */
+body .intro-screen.hovered .intro-arrow {
+  -moz-transform: translatey(-50px);
+  -ms-transform: translatey(-50px);
+  -webkit-transform: translatey(-50px);
+  transform: translatey(-50px);
+  opacity: .85;
+}
+/* line 359, ../compass/sass/main.scss */
+body .intro-screen.hovered .intro-name {
+  -moz-transform: translatey(194px);
+  -ms-transform: translatey(194px);
+  -webkit-transform: translatey(194px);
+  transform: translatey(194px);
+}
+/* line 364, ../compass/sass/main.scss */
+body .intro-screen.exited {
+  opacity: 0;
+  pointer-events: none;
+}
+/* line 368, ../compass/sass/main.scss */
+body .intro-screen.exited .intro-arrow {
+  -moz-transform: translatey(calc(-100% - 400px));
+  -ms-transform: translatey(calc(-100% - 400px));
+  -webkit-transform: translatey(calc(-100% - 400px));
+  transform: translatey(calc(-100% - 400px));
+  opacity: .85;
+}
+/* line 374, ../compass/sass/main.scss */
+body .intro-screen.exited .circle-outline {
+  -moz-transform: scale(5.5);
+  -ms-transform: scale(5.5);
+  -webkit-transform: scale(5.5);
+  transform: scale(5.5);
+  opacity: .9;
+}
+/* line 382, ../compass/sass/main.scss */
+body .canvas-container {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 388, ../compass/sass/main.scss */
+body .slider-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto 0;
+  bottom: 80px;
+  z-index: 10;
+}
+/* line 396, ../compass/sass/main.scss */
+body .slider-container .yui3-slider-thumb {
+  outline: 0 !important;
+  cursor: pointer;
+}
+/* line 399, ../compass/sass/main.scss */
+body .slider-container .yui3-slider-thumb img {
+  top: 0 !important;
+}
+/* line 405, ../compass/sass/main.scss */
+body .speed-rate-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto 0;
+  bottom: 120px;
+  pointer-events: none;
+}
+/* line 413, ../compass/sass/main.scss */
+body .speed-rate-container .speed-title-text {
+  color: #FFF;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  margin-right: 4px;
+}
+/* line 421, ../compass/sass/main.scss */
+body .speed-rate-container .speed-text {
+  color: #FFF;
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+}
+/* line 426, ../compass/sass/main.scss */
+body .speed-rate-container .speed-text .value {
+  font-size: 32px;
+  display: inline-block;
+}
+/* line 432, ../compass/sass/main.scss */
+body .speed-rate-container .speed-text span {
+  font-size: 26px;
+}
+/* line 439, ../compass/sass/main.scss */
+body .control-chevron-container {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  bottom: 60px;
+  height: 70px;
+  left: 0;
+  margin: auto;
+  opacity: .3;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  width: 80px;
+  z-index: 20;
+}
+/* line 455, ../compass/sass/main.scss */
+body .control-chevron-container.left {
+  left: -450px;
+}
+/* line 459, ../compass/sass/main.scss */
+body .control-chevron-container.right {
+  right: -450px;
+}
+/* line 463, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  -webkit-transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  height: 70px;
+  width: 35px;
+  z-index: 2;
+  position: absolute;
+}
+/* line 475, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron .component-container {
+  background: #FFF;
+}
+/* line 479, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron .component {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 485, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron.left {
+  left: 20px;
+}
+/* line 488, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron.left .component:nth-child(1) {
+  -moz-transform: skew(-55deg, 0deg);
+  -ms-transform: skew(-55deg, 0deg);
+  -webkit-transform: skew(-55deg, 0deg);
+  transform: skew(-55deg, 0deg);
+}
+/* line 489, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron.left .component:nth-child(2) {
+  -moz-transform: skew(55deg, 0deg);
+  -ms-transform: skew(55deg, 0deg);
+  -webkit-transform: skew(55deg, 0deg);
+  transform: skew(55deg, 0deg);
+}
+/* line 492, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron.right {
+  right: 20px;
+}
+/* line 495, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron.right .component:nth-child(1) {
+  -moz-transform: skew(55deg, 0deg);
+  -ms-transform: skew(55deg, 0deg);
+  -webkit-transform: skew(55deg, 0deg);
+  transform: skew(55deg, 0deg);
+}
+/* line 496, ../compass/sass/main.scss */
+body .control-chevron-container .aeto-chevron.right .component:nth-child(2) {
+  -moz-transform: skew(-55deg, 0deg);
+  -ms-transform: skew(-55deg, 0deg);
+  -webkit-transform: skew(-55deg, 0deg);
+  transform: skew(-55deg, 0deg);
+}
+/* line 500, ../compass/sass/main.scss */
+body .control-chevron-container.hovered {
+  opacity: .5;
+}
+/* line 507, ../compass/sass/main.scss */
+body .control-chevron-container.hovered .aeto-chevron.left .component:nth-child(1) {
+  -moz-transform: skew(-65deg, 0deg);
+  -ms-transform: skew(-65deg, 0deg);
+  -webkit-transform: skew(-65deg, 0deg);
+  transform: skew(-65deg, 0deg);
+}
+/* line 508, ../compass/sass/main.scss */
+body .control-chevron-container.hovered .aeto-chevron.left .component:nth-child(2) {
+  -moz-transform: skew(65deg, 0deg);
+  -ms-transform: skew(65deg, 0deg);
+  -webkit-transform: skew(65deg, 0deg);
+  transform: skew(65deg, 0deg);
+}
+/* line 512, ../compass/sass/main.scss */
+body .control-chevron-container.hovered .aeto-chevron.right .component:nth-child(1) {
+  -moz-transform: skew(65deg, 0deg);
+  -ms-transform: skew(65deg, 0deg);
+  -webkit-transform: skew(65deg, 0deg);
+  transform: skew(65deg, 0deg);
+}
+/* line 513, ../compass/sass/main.scss */
+body .control-chevron-container.hovered .aeto-chevron.right .component:nth-child(2) {
+  -moz-transform: skew(-65deg, 0deg);
+  -ms-transform: skew(-65deg, 0deg);
+  -webkit-transform: skew(-65deg, 0deg);
+  transform: skew(-65deg, 0deg);
+}
+/* line 519, ../compass/sass/main.scss */
+body .refresh-button {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-image: url(../images/refreshIcon.png);
+  background-size: contain;
+  cursor: pointer;
+  height: 60px;
+  opacity: .75;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 60px;
+  z-index: 20;
+}
+/* line 535, ../compass/sass/main.scss */
+body .refresh-button:hover {
+  -moz-transform: scale(1.1) rotate(360deg);
+  -ms-transform: scale(1.1) rotate(360deg);
+  -webkit-transform: scale(1.1) rotate(360deg);
+  transform: scale(1.1) rotate(360deg);
+  opacity: 1;
+}
+/* line 542, ../compass/sass/main.scss */
+body .quantity-form-label {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 16px;
+  left: 20px;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  z-index: 30;
+}
+/* line 558, ../compass/sass/main.scss */
+body .quantity-form {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity, width;
+  -o-transition-property: opacity, width;
+  -webkit-transition-property: opacity, width;
+  transition-property: opacity, width;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  height: 32px;
+  border: none;
+  left: 20px;
+  opacity: .4;
+  outline: none;
+  position: absolute;
+  top: 42px;
+  z-index: 30;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  padding: 0 6px;
+  width: 96px;
+}
+/* line 576, ../compass/sass/main.scss */
+body .quantity-form:focus {
+  opacity: .8;
+  outline: none;
+  width: 160px;
+}
+/* line 583, ../compass/sass/main.scss */
+body .loop-label {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  position: absolute;
+  color: #FFF;
+  right: 20px;
+  bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  opacity: .5;
+}
+/* line 597, ../compass/sass/main.scss */
+body .demo-title {
+  -moz-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  -webkit-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  color: #FFF;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 22px;
+  line-height: 60px;
+  text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.25), 0px 0px 6px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+}
+
+@-moz-keyframes title-animation {
+  0% {
+    -moz-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes title-animation {
+  0% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+@keyframes title-animation {
+  0% {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
